@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        ===== PERMISSIONS =====
+        Keep this list MINIMAL. Google reviews accessibility apps strictly;
+        any unused permission is a reason to reject.
+    -->
+
+    <!-- Floating overlay panel (quick controls + countdown). -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Foreground Service so the overlay/state survives in background. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!--
+        Android 14 (API 34) requires every FGS to declare a typed permission
+        matching its `foregroundServiceType`. We use SPECIAL_USE because
+        "auto-scrolling assistant" doesn't fit camera/location/mediaPlayback/etc.
+    -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <!-- Android 13+: runtime permission required to post FGS notification. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!--
+        Note on BIND_ACCESSIBILITY_SERVICE:
+        This is NOT requested as a <uses-permission>. It is enforced via
+        android:permission= on the <service> declaration below. The system
+        grants it only after the user explicitly enables our service in
+        Settings > Accessibility. This is the correct pattern.
+    -->
+
+    <application
+        android:name=".AutoScrollApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AutoScroll"
+        tools:targetApi="34">
+
+        <!--
+            Main Activity — single-activity Compose app, navigation handled
+            inside Compose with NavHost.
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AutoScroll.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            ===== Accessibility Service =====
+            - exported=true : the system needs to bind to it from outside our app.
+            - permission     : ONLY the system (which holds BIND_ACCESSIBILITY_SERVICE)
+                               can bind. This is enforced by Android.
+            - intent-filter  : tells the system this is an AccessibilityService.
+            - meta-data      : points to our config xml.
+        -->
+        <service
+            android:name=".service.AutoScrollAccessibilityService"
+            android:exported="true"
+            android:label="@string/accessibility_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!--
+            ===== Foreground Service =====
+            Holds the floating overlay window and keeps the process alive.
+            foregroundServiceType="specialUse" because none of the typed
+            categories (camera/location/mediaPlayback/dataSync/...) fit.
+
+            The <property> is REQUIRED on Android 14+ — it tells Google Play
+            why we use specialUse. Be specific and honest; Play review reads it.
+        -->
+        <service
+            android:name=".service.AutoScrollForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Hosts a floating control overlay for an accessibility-based auto-scrolling assistant that helps users with motor impairments navigate short-video apps without repeated swiping." />
+        </service>
+
+    </application>
+
+</manifest>

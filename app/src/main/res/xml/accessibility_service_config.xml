@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AccessibilityServiceInfo configuration.
+
+    Important fields:
+
+    - accessibilityEventTypes : which event types we receive. We need
+      WINDOW_STATE_CHANGED + WINDOW_CONTENT_CHANGED to detect the active
+      app/screen and to find the "Skip Ad" button when it appears.
+
+    - packageNames : NOT set. We need WINDOW_STATE_CHANGED events from
+      ALL apps so we can detect when the user leaves a target app
+      (e.g. switches from YouTube to Chrome) and stop scrolling.
+      Privacy is preserved at the CODE level: we only ever read window
+      content (rootInActiveWindow + tree traversal) when the foreground
+      packageName is one of our 4 supported apps. See
+      AutoScrollAccessibilityService.onAccessibilityEvent for the filter.
+
+    - canRetrieveWindowContent : TRUE — required to read the UI tree
+      and locate "Skip Ad" / video player nodes.
+
+    - canPerformGestures : TRUE — required to dispatch swipe gestures
+      via dispatchGesture(). This is the primary action the service does.
+
+    - accessibilityFlags : flagDefault is fine. We deliberately do NOT
+      set flagRequestTouchExplorationMode (TalkBack-style) because that
+      changes the user's whole interaction model and would conflict
+      with TalkBack if the user has it on.
+
+    - description : SHOWN to the user in Settings > Accessibility before
+      they enable our service. Be honest and specific — Google literally
+      checks this string against your Play listing.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged|typeViewScrolled"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault|flagIncludeNotImportantViews|flagReportViewIds|flagRetrieveInteractiveWindows"
+    android:canPerformGestures="true"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="100"
+    android:settingsActivity="com.autoscroll.app.MainActivity"
+    android:summary="@string/accessibility_service_summary" />

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== App ===== -->
+    <string name="app_name">AutoScroll</string>
+
+    <!-- ===== Common ===== -->
+    <string name="action_back">Quay lại</string>
+    <string name="action_next">Tiếp tục</string>
+    <string name="action_get_started">Bắt đầu</string>
+    <string name="action_edit">Chỉnh sửa</string>
+    <string name="action_open_settings">Mở cài đặt</string>
+    <string name="action_stop">Dừng</string>
+    <string name="action_allow_overlay">Cho phép hiển thị</string>
+    <string name="label_on">Bật</string>
+    <string name="label_off">Tắt</string>
+
+    <!-- ===== Accessibility service ===== -->
+    <string name="accessibility_service_label">Trợ lý AutoScroll</string>
+    <string name="accessibility_service_summary">
+        Tự động vuốt video ngắn cho người dùng gặp khó khăn vận động.
+    </string>
+    <string name="accessibility_service_description">
+        AutoScroll giúp người dùng gặp khó khăn khi vuốt liên tục (như người
+        khuyết tật vận động, RSI, hoặc bị hạn chế cử động tay) có thể xem
+        các nguồn video ngắn trên YouTube Shorts, Instagram Reels, Facebook
+        Reels và TikTok mà không cần liên tục vuốt thủ công.
+
+        \n\nKhi được bật, AutoScroll đọc nội dung màn hình của bốn ứng dụng
+        này để:
+        \n• Nhận biết khi video kết thúc
+        \n• Nhận biết nút \"Bỏ qua quảng cáo\" để tự động bấm
+        \n• Thực hiện vuốt dọc để chuyển sang video tiếp theo
+
+        \n\nAutoScroll mặc định TẮT. Người dùng tự bật từ bảng điều khiển
+        nổi hoặc màn hình chính của ứng dụng, và có thể dừng bất cứ lúc nào.
+        Dịch vụ không đọc bất kỳ ứng dụng nào khác và không gửi nội dung
+        màn hình ra khỏi thiết bị.
+    </string>
+
+    <!-- ===== Onboarding ===== -->
+    <string name="onboarding_welcome_title">Chào mừng đến với AutoScroll</string>
+    <string name="onboarding_welcome_body">
+        Công cụ hỗ trợ tự động vuốt video ngắn trên YouTube, Instagram,
+        Facebook và TikTok — dành cho người dùng cảm thấy việc vuốt liên
+        tục là khó khăn hoặc mệt mỏi.
+    </string>
+
+    <string name="onboarding_a11y_title">Bật dịch vụ Hỗ trợ tiếp cận</string>
+    <string name="onboarding_a11y_body">
+        AutoScroll sử dụng framework Accessibility của Android để đọc nội
+        dung màn hình của các ứng dụng được hỗ trợ và thực hiện vuốt thay
+        bạn. Không có dữ liệu nào rời khỏi thiết bị.
+    </string>
+    <string name="onboarding_a11y_granted">Đã bật Hỗ trợ tiếp cận</string>
+    <string name="onboarding_a11y_grant">Mở Cài đặt Hỗ trợ tiếp cận</string>
+
+    <string name="onboarding_overlay_title">Cho phép bảng điều khiển nổi</string>
+    <string name="onboarding_overlay_body">
+        Một thẻ nhỏ hiển thị đếm ngược và cho phép bạn tạm dừng/tiếp tục mà
+        không cần rời khỏi video. Bạn có thể tắt bảng điều khiển bất cứ
+        lúc nào trong phần Cài đặt.
+    </string>
+    <string name="onboarding_overlay_granted">Đã cho phép hiển thị</string>
+    <string name="onboarding_overlay_grant">Mở Cài đặt hiển thị trên app khác</string>
+
+    <!-- ===== Home ===== -->
+    <string name="home_warning_a11y_title">Dịch vụ Hỗ trợ tiếp cận đang tắt</string>
+    <string name="home_warning_a11y_body">
+        AutoScroll không thể vuốt thay bạn cho đến khi bạn bật dịch vụ
+        Hỗ trợ tiếp cận.
+    </string>
+    <string name="home_warning_overlay_title">Thiếu quyền hiển thị nổi</string>
+    <string name="home_warning_overlay_body">
+        Bảng điều khiển nổi sẽ không xuất hiện nếu thiếu quyền này. Ứng
+        dụng vẫn hoạt động, nhưng bạn chỉ thấy trạng thái qua thông báo.
+    </string>
+    <string name="home_warning_notifications_title">Thông báo đang bị chặn</string>
+    <string name="home_warning_notifications_body">
+        Không có quyền thông báo, bạn sẽ không thấy biểu tượng trạng thái
+        AutoScroll khi dịch vụ đang chạy. Ứng dụng vẫn hoạt động bình thường.
+    </string>
+    <string name="action_allow_notifications">Cho phép thông báo</string>
+
+    <string name="home_status_title">Trạng thái</string>
+    <string name="home_status_standby">Chờ</string>
+    <string name="home_status_next_swipe">Vuốt tiếp theo sau %1$d giây</string>
+    <string name="home_status_open_apps">Mở YouTube / Instagram / Facebook / TikTok để bắt đầu.</string>
+    <string name="home_status_off">Auto-scroll đang tắt.</string>
+
+    <string name="home_master_title">Tự động vuốt</string>
+    <string name="home_master_running">Đang chạy ngầm</string>
+    <string name="home_master_off_hint">Bật để bắt đầu tự động vuốt</string>
+
+    <string name="home_summary_title">Cấu hình hiện tại</string>
+    <string name="home_summary_mode">Chế độ</string>
+    <string name="home_summary_mode_timer">Hẹn giờ (mỗi %1$d giây)</string>
+    <string name="home_summary_mode_video_end">Hết video (cố gắng tốt nhất)</string>
+    <string name="home_summary_skip_ads">Bỏ qua quảng cáo</string>
+    <string name="home_summary_active_on">Áp dụng cho</string>
+    <string name="home_summary_active_nowhere">Không có ứng dụng nào</string>
+    <string name="home_summary_panel">Bảng điều khiển nổi</string>
+    <string name="home_summary_panel_visible">Hiển thị</string>
+    <string name="home_summary_panel_hidden">Đã ẩn</string>
+
+    <!-- ===== Settings ===== -->
+    <string name="settings_title">Cài đặt</string>
+
+    <string name="settings_section_mode">Chế độ vuốt</string>
+    <string name="settings_mode_timer">Hẹn giờ cố định</string>
+    <string name="settings_mode_timer_desc">Vuốt sang video tiếp theo sau mỗi X giây.</string>
+    <string name="settings_mode_video_end">Khi video kết thúc</string>
+    <string name="settings_mode_video_end_desc">Cố gắng nhận biết khi video kết thúc, dự phòng bằng hẹn giờ.</string>
+
+    <string name="settings_section_timer">Thời gian</string>
+    <string name="settings_timer_label">Vuốt mỗi</string>
+    <string name="settings_timer_value">%1$d giây</string>
+    <string name="settings_timer_range">Khoảng: %1$d giây – %2$d giây</string>
+
+    <string name="settings_section_ads">Quảng cáo</string>
+    <string name="settings_skip_ads_title">Tự động bỏ qua quảng cáo</string>
+    <string name="settings_skip_ads_desc">Bấm nút Bỏ qua khi có và vuốt qua nội dung được tài trợ.</string>
+
+    <string name="settings_section_platforms">Áp dụng cho</string>
+
+    <string name="settings_section_overlay">Bảng điều khiển nổi</string>
+    <string name="settings_overlay_title">Hiển thị bảng điều khiển nổi</string>
+    <string name="settings_overlay_desc">Thẻ nhỏ với đếm ngược và nút tạm dừng nhanh.</string>
+
+    <!-- ===== Floating overlay ===== -->
+    <string name="overlay_standby">Chờ</string>
+    <string name="overlay_close_cd">Đóng bảng điều khiển</string>
+
+    <!-- ===== Foreground service notification ===== -->
+    <string name="notification_channel_name">Trạng thái AutoScroll</string>
+    <string name="notification_channel_desc">Hiển thị khi AutoScroll đang chạy.</string>
+    <string name="notification_text_standby">Chờ — mở ứng dụng được hỗ trợ để bắt đầu.</string>
+    <string name="notification_text_active">Đang chạy trên %1$s — vuốt tiếp sau %2$d giây</string>
+</resources>

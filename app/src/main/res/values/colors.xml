@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand seed color — used by Material3 dynamic color fallback. -->
+    <color name="seed">#3D5AFE</color>
+
+    <!-- Adaptive icon background color. -->
+    <color name="ic_launcher_background">#1A1A2E</color>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Notification small-icon. MUST be monochrome white-on-transparent — Android
+    tints status-bar icons and the system silently strips coloured pixels,
+    so any colour here would render as a blob.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="#FFFFFFFF">
+
+    <!-- Two stacked down-chevrons — same metaphor as the launcher icon. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,8 L7,13 L8.5,14.5 L12,11 L15.5,14.5 L17,13 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,12 L7,17 L8.5,18.5 L12,15 L15.5,18.5 L17,17 Z" />
+</vector>

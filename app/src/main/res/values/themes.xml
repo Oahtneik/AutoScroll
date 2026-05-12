@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+        Compose-friendly theme. We use Material3 DayNight base and rely on
+        Compose MaterialTheme inside the Activity for actual colors/typography.
+        The XML theme just needs to:
+          - inherit from a Material parent so Activity can use it,
+          - declare windowBackground + statusBar so app doesn't flash white
+            before Compose renders,
+          - set windowSplashScreenBackground for the splash on Android 12+.
+    -->
+    <style name="Theme.AutoScroll" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <!--
+        Splash theme — applied to the Activity declaration in the manifest.
+        AndroidX SplashScreen compat backports the Android 12+ splash API to
+        all supported APIs. After the splash fades, we install our normal
+        Theme.AutoScroll via installSplashScreen() in MainActivity.
+    -->
+    <style name="Theme.AutoScroll.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.AutoScroll</item>
+    </style>
+</resources>

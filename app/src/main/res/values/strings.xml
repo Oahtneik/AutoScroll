@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== App ===== -->
+    <string name="app_name">AutoScroll</string>
+
+    <!-- ===== Common actions / labels ===== -->
+    <string name="action_back">Back</string>
+    <string name="action_next">Next</string>
+    <string name="action_get_started">Get started</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_open_settings">Open settings</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_allow_overlay">Allow overlay</string>
+    <string name="label_on">On</string>
+    <string name="label_off">Off</string>
+
+    <!-- ===== Accessibility service (Play-policy critical) ===== -->
+    <string name="accessibility_service_label">AutoScroll Assistant</string>
+    <string name="accessibility_service_summary">
+        Auto-scrolls short-video feeds for users with motor impairments.
+    </string>
+    <string name="accessibility_service_description">
+        AutoScroll helps users who have difficulty with repeated swipe gestures
+        (such as people with motor impairments, RSI, or limited hand mobility)
+        navigate short-video feeds in YouTube Shorts, Instagram Reels, Facebook
+        Reels, and TikTok.
+
+        \n\nWhen enabled, AutoScroll reads the screen content of these four
+        apps to:
+        \n• Detect when a video has finished playing
+        \n• Detect \"Skip Ad\" controls so it can dismiss them automatically
+        \n• Perform a vertical swipe to advance to the next video
+
+        \n\nAutoScroll is OFF by default. The user enables it from the
+        floating control overlay or the app\'s home screen, and can stop it
+        at any time. The service does not read any other apps and does not
+        transmit screen content off the device.
+    </string>
+
+    <!-- ===== Onboarding ===== -->
+    <string name="onboarding_welcome_title">Welcome to AutoScroll</string>
+    <string name="onboarding_welcome_body">
+        An accessibility helper that auto-scrolls short videos on YouTube,
+        Instagram, Facebook and TikTok — built for users who find repeated
+        swiping difficult or tiring.
+    </string>
+
+    <string name="onboarding_a11y_title">Enable Accessibility Service</string>
+    <string name="onboarding_a11y_body">
+        AutoScroll uses Android\'s Accessibility framework to read the screen
+        of supported apps and perform swipes on your behalf. Nothing leaves
+        your device.
+    </string>
+    <string name="onboarding_a11y_granted">Accessibility enabled</string>
+    <string name="onboarding_a11y_grant">Open Accessibility settings</string>
+
+    <string name="onboarding_overlay_title">Allow the floating panel</string>
+    <string name="onboarding_overlay_body">
+        A small pill shows the countdown and lets you pause/resume without
+        leaving the video. You can disable the overlay any time in Settings.
+    </string>
+    <string name="onboarding_overlay_granted">Overlay allowed</string>
+    <string name="onboarding_overlay_grant">Open overlay settings</string>
+
+    <!-- ===== Home ===== -->
+    <string name="home_warning_a11y_title">Accessibility service is off</string>
+    <string name="home_warning_a11y_body">
+        AutoScroll can\'t swipe for you until you enable the Accessibility Service.
+    </string>
+    <string name="home_warning_overlay_title">Overlay permission missing</string>
+    <string name="home_warning_overlay_body">
+        The floating panel won\'t appear without this permission. The app
+        will still work, but you\'ll only see status from the notification.
+    </string>
+    <string name="home_warning_notifications_title">Notifications are blocked</string>
+    <string name="home_warning_notifications_body">
+        Without notification permission you won\'t see the AutoScroll
+        status indicator while the service runs. The app still works.
+    </string>
+    <string name="action_allow_notifications">Allow notifications</string>
+
+    <string name="home_status_title">Status</string>
+    <string name="home_status_standby">Standby</string>
+    <string name="home_status_next_swipe">Next swipe in %1$ds</string>
+    <string name="home_status_open_apps">Open YouTube / Instagram / Facebook / TikTok to start.</string>
+    <string name="home_status_off">Auto-scroll is off.</string>
+
+    <string name="home_master_title">Auto-scroll</string>
+    <string name="home_master_running">Running in the background</string>
+    <string name="home_master_off_hint">Turn on to start auto-scrolling</string>
+
+    <string name="home_summary_title">Current configuration</string>
+    <string name="home_summary_mode">Mode</string>
+    <string name="home_summary_mode_timer">Timer (every %1$ds)</string>
+    <string name="home_summary_mode_video_end">Video end (best-effort)</string>
+    <string name="home_summary_skip_ads">Skip ads</string>
+    <string name="home_summary_active_on">Active on</string>
+    <string name="home_summary_active_nowhere">Nowhere</string>
+    <string name="home_summary_panel">Floating panel</string>
+    <string name="home_summary_panel_visible">Visible</string>
+    <string name="home_summary_panel_hidden">Hidden</string>
+
+    <!-- ===== Settings ===== -->
+    <string name="settings_title">Settings</string>
+
+    <string name="settings_section_mode">Scroll mode</string>
+    <string name="settings_mode_timer">Fixed timer</string>
+    <string name="settings_mode_timer_desc">Swipe to the next video every X seconds.</string>
+    <string name="settings_mode_video_end">When video ends</string>
+    <string name="settings_mode_video_end_desc">Try to detect when the current video ends, falling back to the timer.</string>
+
+    <string name="settings_section_timer">Timer</string>
+    <string name="settings_timer_label">Swipe every</string>
+    <string name="settings_timer_value">%1$ds</string>
+    <string name="settings_timer_range">Range: %1$ds – %2$ds</string>
+
+    <string name="settings_section_ads">Ads</string>
+    <string name="settings_skip_ads_title">Skip ads automatically</string>
+    <string name="settings_skip_ads_desc">Press visible Skip buttons and swipe past sponsored content.</string>
+
+    <string name="settings_section_platforms">Active on</string>
+
+    <string name="settings_section_overlay">Floating panel</string>
+    <string name="settings_overlay_title">Show floating panel</string>
+    <string name="settings_overlay_desc">The pill control with countdown and quick pause.</string>
+
+    <!-- ===== Floating overlay ===== -->
+    <string name="overlay_standby">Standby</string>
+    <string name="overlay_close_cd">Close overlay</string>
+
+    <!-- ===== Foreground service notification ===== -->
+    <string name="notification_channel_name">AutoScroll status</string>
+    <string name="notification_channel_desc">Shows that AutoScroll is running.</string>
+    <string name="notification_text_standby">Standby — open a supported app to start.</string>
+    <string name="notification_text_active">Active on %1$s — next swipe in %2$ds</string>
+</resources>
