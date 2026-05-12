@@ -21,7 +21,7 @@ The app uses three Android subsystems:
    performs swipe gestures, and locates "Skip Ad" controls.
 2. **System Alert Window** (`SYSTEM_ALERT_WINDOW`) — draws the floating
    overlay panel.
-3. **Foreground Service** — keeps the app alive in the background reliably.
+3. **Foreground Service** keeps the app alive in the background reliably.
 
 ## Tech stack
 
